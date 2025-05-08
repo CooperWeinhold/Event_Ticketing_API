@@ -7,6 +7,7 @@ import indexRoutes from './routes/index.js';
 import notFound from './middleware/notFound.js';
 import errorHandler from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
+import eventRoutes from './routes/eventRoutes.js';
 
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);   // register & login
+app.use('/api/events', eventRoutes);
 app.use('/', indexRoutes);          // welcome page still works
 
 
